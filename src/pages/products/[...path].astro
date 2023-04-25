@@ -1,0 +1,30 @@
+---
+const { path = "index" } = Astro.params;
+
+const page = [
+  {
+    match: /some-regex/,
+    title: "View all products",
+  },
+  {
+    match: /some-regex/,
+    title: "Some Product",
+  },
+  {
+    match: /some-regex/,
+    title: "Some Product Category Item",
+  },
+  {
+    match: /some-regex/,
+    title: "Some Product Type Category Item",
+  },
+];
+
+const relevantPageDetails = page.find((v) => path.match(v.match));
+
+if (!relevantPageDetails) {
+  return Astro.redirect("/404");
+}
+---
+
+<h1>{relevantPageDetails.title}</h1>
