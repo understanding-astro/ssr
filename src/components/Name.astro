@@ -1,0 +1,8 @@
+---
+const personResponse = await fetch("https://randomuser.me/api/");
+await new Promise((r) => setTimeout(r, 10000));
+const personData = await personResponse.json();
+const randomPerson = personData.results[0];
+---
+
+<p>{randomPerson.name.first}</p>
