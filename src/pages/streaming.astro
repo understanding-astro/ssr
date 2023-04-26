@@ -1,16 +1,16 @@
 ---
-import Fact from "../components/Fact.astro";
-import Name from "../components/Name.astro";
+import Block from "../components/Block.astro";
 ---
 
 <html>
   <head>
-    <title>A name and a fact</title>
+    <title>Streaming</title>
   </head>
   <body>
-    <h2>A name</h2>
-    <Name />
-    <h2>A fact</h2>
-    <Fact />
+    <Block text="Block #1" delay={1000} />
+    <Block text="Block #2" delay={2000} />
+    <Block text="Block #3" delay={3000} />
+    <Block text="Block #4" delay={4000} />
+    <Block text="Block #5" delay={5000} />
   </body>
 </html>

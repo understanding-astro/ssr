@@ -1,0 +1,25 @@
+---
+import { sleep } from "../sleep";
+
+interface Props {
+  text: string;
+  delay: number;
+}
+
+const { text, delay } = Astro.props;
+
+await sleep(delay);
+---
+
+<div>
+  {text}
+</div>
+
+<style>
+  div {
+    margin: 1rem 0;
+    padding: 2rem 6rem;
+    border-radius: 10px;
+    background-color: blanchedalmond;
+  }
+</style>
