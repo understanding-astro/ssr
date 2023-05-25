@@ -1,16 +1,28 @@
 ---
-import Block from "../components/Block.astro";
+import { sleep } from "../sleep";
+
+const getSomeData = async () => {
+  await sleep(1000);
+  return "some data ";
+};
+
+const getSomeOtherData = async () => {
+  await sleep(200);
+  return "another data";
+};
+
+const data = await getSomeData();
+const otherData = await getSomeOtherData();
 ---
 
 <html>
   <head>
-    <title>Streaming</title>
+    <title>Product</title>
   </head>
   <body>
-    <Block text="Block #1" delay={1000} />
-    <Block text="Block #2" delay={2000} />
-    <Block text="Block #3" delay={3000} />
-    <!-- <Block text="Block #4" delay={4000} />
-    <Block text="Block #5" delay={5000} /> -->
+    <h2>A name</h2>
+    <p>{data}</p>
+    <h2>A fact</h2>
+    <p>{getSomeOtherData}</p>
   </body>
 </html>
